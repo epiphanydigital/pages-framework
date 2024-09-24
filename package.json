@@ -7,8 +7,8 @@
   "author": "James C Brooks <james.c.brooks@gsa.gov>",
   "type": "module",
   "scripts": {
-    "watch:sass": "sass --watch _src/sass:dist/css",
-    "build:sass": "sass _src/sass:dist/css",
+    "watch:sass": "sass --watch --update --style=expanded _src/sass:dist/css --load-path=node_modules",
+    "build:sass": "sass --no-source-map --style=compressed _src/sass:dist/css",
     "watch:eleventy": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve --incremental",
     "build:eleventy": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
     "test": "vitest run",
@@ -25,11 +25,11 @@
     "@testing-library/dom": "^10.0.0",
     "@types/node": "^22.5.5",
     "happy-dom": "^14.7.1",
+    "jsx-async-runtime": "^0.1.8",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "sass": "^1.79.2",
     "tsx": "^4.7.2",
-    "vitest": "^1.5.0",
-    "jsx-async-runtime": "^0.1.8"
+    "vitest": "^1.5.0"
   }
 }

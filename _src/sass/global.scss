@@ -14,11 +14,11 @@
 
 @forward "uswds.config";
 
-//@forward '@uswds/uswds/packages/uswds';
+//@forward '~@uswds/uswds/packages/uswds';
 
 @forward 'uswds.custom';
 
 // -------------------------------------
 // Import individual theme settings
 
-@forward "styles";
+//@forward "styles";
