@@ -15,6 +15,12 @@
 @forward "uswds.config";
 
 // Import USDWS core
+
+@forward "@uswds/uswds/packages/uswds";
+//@forward "uswds-theme";
+//@forward "uswds";
+//@forward "uswds-theme-custom-styles";
+
 //@forward "@uswds/uswds/src/stylesheets/packages/_uswds-utilities";
 //@forward "@uswds/uswds/packages/uswds-global";
 //@forward "@uswds/uswds/packages/uswds-helpers";

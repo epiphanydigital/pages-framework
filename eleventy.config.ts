@@ -4,8 +4,10 @@ import * as path from 'path';
 
 export default function (config: any) {
 
+    let pathPrefix = '/';
+
     // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
-    config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
+    // config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
     config.addTemplateFormats('scss');
 
     config.addExtension('scss', {
@@ -63,8 +65,16 @@ export default function (config: any) {
         return `<!doctype html>\n${result}`;
     });
 
+    // If BASEURL env variable exists, update pathPrefix to the BASEURL
+    if (process.env.BASEURL) {
+        pathPrefix = process.env.BASEURL
+    }
+
     return {
         templateFormats: ['md', 'njk', 'html', 'liquid'],
+        markdownTemplateEngine: 'liquid',
+        htmlTemplateEngine: 'liquid',
+        pathPrefix: pathPrefix,
         dir: {
             input: "site",
             layouts: "../_layouts",
