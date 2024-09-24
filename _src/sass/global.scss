@@ -15,9 +15,9 @@
 @forward "uswds.config";
 
 // Import USDWS core
-@forward "@uswds/uswds/packages/uswds-global";
-@forward "@uswds/uswds/packages/uswds-helpers";
-@forward "@uswds/uswds/packages/uswds-utilities/src/styles";
+//@forward "@uswds/uswds/packages/uswds-global";
+//@forward "@uswds/uswds/packages/uswds-helpers";
+//@forward "@uswds/uswds/packages/uswds-utilities/src/styles";
 
 // Import USDWS overrides
 @forward 'uswds.custom';
