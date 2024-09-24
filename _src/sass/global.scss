@@ -10,15 +10,19 @@
 
 // -------------------------------------
 
-// Import USWDS settings and core
+// Import USWDS settings
 
 @forward "uswds.config";
 
-//@forward '~@uswds/uswds/packages/uswds';
+// Import USDWS core
+@forward "@uswds/uswds/packages/uswds-global";
+@forward "@uswds/uswds/packages/uswds-helpers";
+@forward "@uswds/uswds/packages/uswds-utilities/src/styles";
 
+// Import USDWS overrides
 @forward 'uswds.custom';
 
 // -------------------------------------
 // Import individual theme settings
 
-//@forward "styles";
+@forward "styles";
