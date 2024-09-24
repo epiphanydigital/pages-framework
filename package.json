@@ -1,0 +1,35 @@
+{
+  "name": "pages-framework",
+  "version": "2.0.0",
+  "description": "The core of pages. Now you too can be a page. Can be used as an included module and has options to be able to build a boilerplate, a demo site, or scaffolding with only required included modules.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "James C Brooks <james.c.brooks@gsa.gov>",
+  "type": "module",
+  "scripts": {
+    "watch:sass": "sass --watch _src/sass:dist/css",
+    "build:sass": "sass _src/sass:dist/css",
+    "watch:eleventy": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve --incremental",
+    "build:eleventy": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
+    "test": "vitest run",
+    "test2": "tsx ./node_modules/.bin/vitest run",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0-alpha.6",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@uswds/uswds": "3.8.2"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.0.0",
+    "@types/node": "^22.5.5",
+    "happy-dom": "^14.7.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "sass": "^1.79.2",
+    "tsx": "^4.7.2",
+    "vitest": "^1.5.0",
+    "jsx-async-runtime": "^0.1.8"
+  }
+}
