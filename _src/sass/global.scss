@@ -15,16 +15,15 @@
 @forward "uswds.config";
 
 // Import USDWS core
-
-@forward "@uswds/uswds/packages/uswds";
-//@forward "uswds-theme";
-//@forward "uswds";
-//@forward "uswds-theme-custom-styles";
-
-//@forward "@uswds/uswds/src/stylesheets/packages/_uswds-utilities";
-//@forward "@uswds/uswds/packages/uswds-global";
-//@forward "@uswds/uswds/packages/uswds-helpers";
-//@forward "@uswds/uswds/packages/uswds-utilities/src/styles";
+@forward "uswds-theme";
+@forward "usa-site-alert";
+@forward "usa-in-page-navigation";
+@forward "uswds-theme";
+@forward "usa-site-alert";
+@forward "usa-in-page-navigation";
+@forward "uswds-global";
+@forward "uswds-utilities";
+@forward "uswds-fonts";
 
 // Import USDWS overrides
 @forward 'uswds.custom';
