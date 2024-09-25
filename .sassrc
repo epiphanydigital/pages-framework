@@ -1,5 +1,0 @@
- {
-   "includePaths": ["./node_modules", "./node_modules/@uswds/uswds/packages", "./node_modules/fontawesome-free/scss"],
-   "outputStyle": "expanded",
-   "sourceMap": true,
- }

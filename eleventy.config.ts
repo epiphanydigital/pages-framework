@@ -1,11 +1,11 @@
 import {renderToString} from "jsx-async-runtime";
 import * as sass from "sass";
 import * as path from 'path';
-import markdownIt from 'markdown-it';
-import markdownItAnchor from 'markdown-it-anchor';
-import fs from 'fs';
-import yaml from "js-yaml";
+import * as fs from 'fs';
+import * as yaml from "js-yaml";
 
+
+// export default function (config: any) {
 
 module.exports = function (config: any) {
 
@@ -45,22 +45,23 @@ module.exports = function (config: any) {
 
     config.addDataExtension("yaml", (contents: any) => yaml.load(contents));
 
+    // TODO: See if this is worthwhile to solve
     // Customize Markdown library and settings:
     // @ts-ignore
-    let markdownLibrary = markdownIt({
-        html: true,
-        breaks: true,
-        linkify: true,
-    }).use(markdownItAnchor, {
-        permalink: markdownItAnchor.permalink.ariaHidden({
-            placement: 'after',
-            class: 'direct-link',
-            symbol: '#',
-            // level: [1, 2, 3, 4], // TODO: Look into this... property doesn't exist.
-        }),
-        slugify: config.getFilter('slug'),
-    });
-    config.setLibrary('md', markdownLibrary);
+    // let markdownLibrary = markdownIt({
+    //     html: true,
+    //     breaks: true,
+    //     linkify: true,
+    // }).use(markdownItAnchor, {
+    //     permalink: markdownItAnchor.permalink.ariaHidden({
+    //         placement: 'after',
+    //         class: 'direct-link',
+    //         symbol: '#',
+    //         // level: [1, 2, 3, 4], // TODO: Look into this... property doesn't exist.
+    //     }),
+    //     slugify: config.getFilter('slug'),
+    // });
+    // config.setLibrary('md', markdownLibrary);
 
     // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
     // config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
@@ -135,7 +136,6 @@ module.exports = function (config: any) {
         htmlTemplateEngine: 'liquid',
         pathPrefix: pathPrefix,
         dir: {
-            includes: ["./node_modules", "./node_modules/@uswds/uswds/packages"],
             input: "site",
             layouts: "../_layouts",
             output: "dist",
